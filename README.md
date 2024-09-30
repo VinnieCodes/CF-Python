@@ -65,7 +65,7 @@ print("The sum of", a, "and", b, "is:", c)
 
 ## Set Up IPython Shell
 
-Set up an iPython shell in the virtual environment "cf-python-base". An IPython shell is similar to the regular Python REPL with additional features like syntax highlighting, auto-indentation, and robust auto-complete features. Install it using pip.
+Set up an IPython shell in the virtual environment "cf-python-base". An IPython shell is similar to the regular Python REPL with additional features like syntax highlighting, auto-indentation, and robust auto-complete features. Install it using pip.
 
 ![Step 4](./exercise1.1/4.png)
 
