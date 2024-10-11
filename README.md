@@ -332,10 +332,12 @@ Define an `else` block that calls `search_ingredient()` while passing `data` int
 
 ## Run the Input Script
 
-Run “recipe_input.py” and enter a few sample recipes of your choice. Make sure the script can generate a binary file after execution.
+Run “recipe_input.py” and enter a few sample recipes of your choice.
 
 ![step 1a](./exercise1.4/3.1.png)
 
 ## Run the Search Script
 
-TO BE ADDED
+Run “recipe_search.py”, enter the ingredient to be searched for, and make sure you get the desired output with the relevant recipes.
+
+![step 2](./exercise1.4/3.2.png)
