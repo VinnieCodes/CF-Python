@@ -13,6 +13,8 @@ def take_recipe():
     else:
       ingredients.append(ingredient)
   recipe = {"name": name, "cooking_time": cooking_time, "ingredients": ingredients}
+  difficulty = calc_difficulty(recipe)
+  recipe["difficulty"] = difficulty
   return recipe
 
 def calc_difficulty(recipe):
@@ -20,7 +22,7 @@ def calc_difficulty(recipe):
     difficulty = "Easy"
   elif recipe["cooking_time"] < 10 and len(recipe["ingredients"]) >= 4:
     difficulty = "Medium"
-  elif recipe["cooking_time"] >= 10 and len(recipe["ingredients"]) <= 4:
+  elif recipe["cooking_time"] >= 10 and len(recipe["ingredients"]) < 4:
     difficulty = "Intermediate"
   else:
     difficulty = "Hard"
