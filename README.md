@@ -421,7 +421,7 @@ Use the `recipe_search()` method to search for recipes that contain each ingredi
 
 Run “recipe_oop.py” and take screenshots of its execution.
 
-![step 8](./exercise1.5/8.png)
-![step 9](./exercise1.5/9.png)
-![step 10](./exercise1.5/10.png)
+![step 8](./exercise1.5/8.png)  
+![step 9](./exercise1.5/9.png)  
+![step 10](./exercise1.5/10.png)  
 ![step 11](./exercise1.5/11.png)
