@@ -425,3 +425,240 @@ Run “recipe_oop.py” and take screenshots of its execution.
 ![step 9](./exercise1.5/9.png)  
 ![step 10](./exercise1.5/10.png)  
 ![step 11](./exercise1.5/11.png)
+
+# Exercise 6 Part 1
+
+## Table of Contents
+
+1. [Import mysql](#import-mysql)
+2. [Initialize Connection Object](#initialize-connection-object)
+3. [Create a Cursor](#create-a-cursor)
+4. [Create a Database](#create-a-database)
+5. [Use the Database](#use-the-database)
+6. [Create a Table](#create-a-table)
+
+## Import mysql
+
+Import the mysql.connector module
+
+![step 1](./exercise1.6/1.1.png)
+
+## Initialize Connection Object
+
+Initialize a connection object called **conn**, which connects with the following parameters:
+
+- Hostname is localhost
+- Username is cf-python
+- Password is password
+
+![step 2](./exercise1.6/1.2.png)
+
+## Create a Cursor
+
+Initialize a cursor object from conn.
+
+![step 3](./exercise1.6/1.3.png)
+
+## Create a Database
+
+Create a database called **task_database**
+
+![step 4](./exercise1.6/1.4.png)
+
+## Use the Database
+
+Have your script access your database with the `USE` statement.
+
+![step 5](./exercise1.6/1.5.png)
+
+## Create a Table
+
+Create a table called **Recipes** with the following columns:
+
+- id: integer type; increments automatically; the primary key for this table.
+- name: string type; character limit of 50; stores the name of the recipe.
+- ingredients: string type; character limit of 255; stores the ingredients of the recipe in the form of a string.
+- cooking_time: integer type; stores the cooking time in minutes.
+- difficulty: string type; character limit of 20; stores the difficulty level as Easy, Medium, Intermediate, or Hard.
+
+![step 6](./exercise1.6/1.6.png)
+
+# Exercise 6 Part 2
+
+## Table of Contents
+
+1. [Create the Main Menu](#create-the-main-menu)
+
+## Create the Main Menu
+
+Define the function for the main menu
+
+![step 1](./exercise1.6/2.1.png)
+
+# Exercise 6 Part 3
+
+## Table of Contents
+
+1. [Start the Create Recipe Function](#start-the-create-recipe-function)
+2. [Complete the Create Recipe Function](#complete-the-create-recipe-function)
+3. [Create SQL Query](#create-sql-query)
+
+## Start the Create Recipe Function
+
+Collect the following details for a recipe entry:
+
+- name: Name of the recipe, string type.
+- cooking_time: Cooking time of the recipe in minutes, integer type.
+- ingredients: Ingredients of the recipe, each ingredient stored as a string in this list.
+
+![step 1](./exercise1.6/3.1.png)
+
+## Complete the Create Recipe Function
+
+Call a function called calculate_difficulty(). It calculates the difficulty of the recipe by taking in cooking_time and ingredients as its arguments, and returning one of the following strings: Easy, Medium, Intermediate, or Hard. Store the output in a variable called difficulty.
+
+![step 2](./exercise1.6/3.2.png)
+
+## Create SQL Query
+
+Create a SQL query so that you can enter the recipe into the Recipes table on your database. Since MySQL doesn’t fully support arrays, your ingredients list needs to be converted into a comma-separated string.
+
+![step 3](./exercise1.6/3.3.png)
+
+# Exercise 6 Part 4
+
+## Table of Contents
+
+1. [Start Defining the Search Recipe Function](#start-defining-the-search-recipe-function)
+2. [Add Ingredients to All Ingredients](#add-ingredients-to-all-ingredients)
+3. [User Selection](#user-selection)
+4. [SQL Query Recipe Search](#sql-query-recipe-search)
+
+## Start Defining the Search Recipe Function
+
+You need to begin with an entire list of ingredients that is available in the Recipes table for the user to choose from. Obtain this list by SELECT-ing only the ingredients column from your table. Store the output into a variable called results.
+
+![step 1](./exercise1.6/4.1.png)
+
+## Add Ingredients to All Ingredients
+
+Add each ingredient that you come across into a new list called all_ingredients, and make sure that there are no duplicates.
+
+![step 2](./exercise1.6/4.2.png)
+
+## User Selection
+
+Display all ingredients that have been found to the user and allow them to pick a number corresponding to the ingredient in order to begin a search. Store the ingredient to be searched for into a variable called `search_ingredient`
+
+![step 3](./exercise1.6/4.3.png)
+
+## SQL Query Recipe Search
+
+Another SQL query is executed using the retrieved ingredient to search for recipes that contain that ingredient. The query uses the `LIKE` and `%` operators
+
+![step 4](./exercise1.6/4.4.png)
+
+# Exercise 6 Part 5
+
+## Table of Contents
+
+1. [Start Defining the Update Recipe Function](#start-defining-the-update-recipe-function)
+2. [Collect the New Value From User](#collect-the-new-value-from-user)
+3. [Build Queries](#build-queries)
+4. [Execute Queries and Commit Changes](#execute-queries-and-commit-changes)
+
+## Start Defining the Update Recipe Function
+
+Fetch all the recipes that are present on the database and list them to the user. The user will then pick a recipe to be updated by specifying its corresponding id, after which the script will ask for the column to be updated for that recipe. The columns available for modification are name, cooking_time and ingredients.
+
+![step 1](./exercise1.6/5.1.png)
+
+## Collect the New Value From User
+
+Once the user selects the column that needs an update, collect the new value from the user.
+
+![step 2](./exercise1.6/5.s2.png)
+
+## Build Queries
+
+Build your query in the form of a string, to update an entry on the table for the given id, column, and updated value. Note that if the user is updating either cooking_time or ingredients, the script will have to recalculate the difficulty of the recipe, then update that column as well (make a separate query for this).
+
+![step 3](./exercise1.6/5.3.png)
+
+## Execute Queries and Commit Changes
+
+Execute this query and commit your changes to the table.
+
+![step 4](./exercise1.6/5.3.png)
+
+# Exercise 6 Part 6
+
+## Table of Contents
+
+1. [Start Defining the Delete Recipe Function](#start-defining-the-delete-recipe-function)
+2. [Build Query](#build-query)
+3. [Execute Query and Commit Changes](#execute-query-and-commit-changes)
+
+## Start Defining the Delete Recipe Function
+
+This function will display every recipe in your table to the user, where they can pick one by its id for deletion.
+
+![step 1](./exercise1.6/6.1.png)
+
+## Build Query
+
+Build a query using the DELETE statement, where the row to be deleted is identified by the id that the user had specified.
+
+![step 2](./exercise1.6/6.2.png)
+
+## Execute Query and Commit Changes
+
+Execute Query and Commit Changes
+
+![step 3](./exercise1.6/6.3.png)
+
+# Exercise 6 Part 7
+
+## Table of Contents
+
+1. [Run Script](#run-script)
+2. [Add Recipes](#add-recipes)
+3. [Run a Search](#run-a-search)
+4. [Update a Recipe](#update-a-recipe)
+5. [Delete a Recipe](#delete-a-recipe)
+6. [Exit](#exit)
+
+## Run Script
+
+Ensure that your MySQL server is running on your system. Then, run your script.
+
+![step 1](./exercise1.6/7.1.png)
+
+## Add Recipes
+
+Create about 3 to 4 simple recipes of your choice using the first option in your menu.
+
+![step 2](./exercise1.6/7.2.png)
+
+## Run a Search
+
+Run a search by selecting the ingredient to search for, this time using the second option in the script: **Search for a Recipe**.
+
+![step 3](./exercise1.6/7.3.png)
+
+## Update a Recipe
+
+Change a few values in some of your recipes using the third option in your script’s menu: Update a Recipe.
+
+![step 4](./exercise1.6/7.4.png)
+
+## Delete a Recipe
+
+Delete a Recipe
+
+![step 5](./exercise1.6/7.5.png)
+
+## Exit
+
+Exit the Script
+![step 6](./exercise1.6/7.6.png)

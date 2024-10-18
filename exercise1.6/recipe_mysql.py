@@ -76,7 +76,7 @@ def create_recipe(conn, cursor):
   )
   conn.commit()
   print()
-  print(" Recipe create successfully!")
+  print(" Recipe created successfully!")
 
 def calculate_difficulty(cooking_time, ingredients):
   if cooking_time < 10 and len(ingredients) < 4:
@@ -104,7 +104,7 @@ def search_recipe(cursor):
   print(" Available ingredients:")
   print()
   for i in range(len(all_ingredients)):
-    print(f"{i+1}. {all_ingredients[i]}")
+    print(f" {i+1}. {all_ingredients[i]}")
   while True:
     try:
       ingredient_choice = int(
@@ -140,8 +140,10 @@ def update_recipe(conn, cursor):
   results = cursor.fetchall()
   print()
   print(" Available recipes:")
+  x = 1
   for row in results:
-    print(f"{row[0]}. {row[1]}")
+    print(f" {x}. {row[1]}")
+    x +=1
   while True:
     try:
       recipe_choice = int(
@@ -184,7 +186,7 @@ def update_recipe(conn, cursor):
       "UPDATE Recipes SET cooking_time = %s WHERE id = %s", (new_value, recipe_id)
     )
     cursor.execute("SELECT ingredients FROM Recipes WHERE id = %s", (recipe_id,))
-    ingredients = cursor.fectchall()[0][0].split(", ")
+    ingredients = cursor.fetchall()[0][0].split(", ")
     difficulty = calculate_difficulty(new_value, ingredients)
     cursor.execute(
       "UPDATE Recipes SET difficulty = %s WHERE id = %s", (difficulty, recipe_id)
@@ -210,8 +212,10 @@ def delete_recipe(conn, cursor):
   results = cursor.fetchall()
   print()
   print(" Available recipes:")
+  x = 1
   for row in results:
-    print(f"{row[0]}. {row[1]}")
+    print(f" {x}. {row[1]}")
+    x +=1
   while True:
     try:
       recipe_choice = int(
