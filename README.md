@@ -577,7 +577,7 @@ Fetch all the recipes that are present on the database and list them to the user
 
 Once the user selects the column that needs an update, collect the new value from the user.
 
-![step 2](./exercise1.6/5.s2.png)
+![step 2](./exercise1.6/5.2.png)
 
 ## Build Queries
 
