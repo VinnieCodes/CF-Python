@@ -1,5 +1,5 @@
-from sqlalchemy import create_engine, Column, Integer, String, or_
-from sqlalchemy.orm import sessionmaker, declarative_base
+from sqlalchemy import create_engine, Column, Integer, String, or_ # type: ignore
+from sqlalchemy.orm import sessionmaker, declarative_base # type: ignore
 import time
 
 # Helper functions

@@ -1,4 +1,4 @@
-import mysql.connector
+import mysql.connector # type: ignore
 import time
 
 conn = mysql.connector.connect(host="localhost", user="cf-python", passwd="password")
