@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,6 +7,13 @@
     <title>bookstore home</title>
   </head>
   <body>
-    Welcome to our bookstore
+    <h1 style="text-align: center">Welcome to our Bookstore</h1>
+    <br />
+    <img
+      src="{% static 'sales/images/no_picture.jpg' %}"
+      alt="home"
+      width="600"
+      height="300"
+    />
   </body>
 </html>
