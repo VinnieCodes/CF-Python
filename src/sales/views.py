@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def home(request):
   return render(request, 'sales/home.html')
+
+def records(request):
+  return render(request, 'sales/records.html')
