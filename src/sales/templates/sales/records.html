@@ -1,4 +1,9 @@
 <!DOCTYPE html>
 <h1>Search for sales records</h1>
 
-<hr>
+<hr />
+<form action="" method="POST">
+  {% csrf_token %} 
+  {{form}}
+  <button type="submit">search</button>
+</form>
