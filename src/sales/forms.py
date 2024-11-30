@@ -7,5 +7,5 @@ CHART__CHOICES = (
 )
 
 class SalesSearchForm(forms.Form):
-  book_title = forms.CharField(max_length=120)
-  chart_type = forms.ChoiceField(choices=CHART__CHOICES)
+  book_title = forms.CharField(max_length = 120)
+  chart_type = forms.ChoiceField(choices = CHART__CHOICES)
