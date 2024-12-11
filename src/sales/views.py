@@ -20,7 +20,7 @@ def records(request):
     chart_type = request.POST.get('chart_type')
 
     #apply filter to extract data
-    qs = Sale.objects.filter(book__name=book_title)
+    qs = Sale.objects.filter(book__name__icontains=book_title)
     if qs:      #if data found
       #convert the queryset values to pandas dataframe
       sales_df = pd.DataFrame(qs.values()) 
@@ -39,8 +39,8 @@ def records(request):
     qs = Sale.objects.all()
     print (qs)
 
-    print ('Case 2: Output of Sale.objects.filter(book_name=book_title)')
-    qs = Sale.objects.filter(book__name=book_title)
+    print ('Case 2: Output of Sale.objects.filter(book_name__icontains=book_title)')
+    qs = Sale.objects.filter(book__name__icontains=book_title)
     print (qs)
 
     print ('Case 3: Output of qs.values')
