@@ -3,6 +3,7 @@ from .forms import SalesSearchForm
 from .models import Sale
 from .utils import get_bookname_from_id
 import pandas as pd
+from .utils import get_bookname_from_id, get_chart
 
 # Create your views here.
 
@@ -12,6 +13,7 @@ def home(request):
 def records(request):
   form = SalesSearchForm(request.POST or None)
   sales_df = None
+  chart = None
   if request.method == 'POST':
     # read book_title and chart_type
     book_title = request.POST.get('book_title')
@@ -23,9 +25,10 @@ def records(request):
       #convert the queryset values to pandas dataframe
       sales_df = pd.DataFrame(qs.values()) 
       # convert the ID to Name of book
-      sales_df['book_id'] = sales_df['book_id'].apply(get_bookname_from_id)                         #convert book_id to book_name
+      sales_df['book_id'] = sales_df['book_id'].apply(get_bookname_from_id)
+      chart = get_chart(chart_type, sales_df, labels=sales_df['date_created'].values)
 
-    sales_df = sales_df.to_html()
+      sales_df = sales_df.to_html()
 
     # display in terminal - needed for debugging during development only
     print()
@@ -54,6 +57,7 @@ def records(request):
   context = {
     'form': form,
     'sales_df': sales_df,
+    'chart': chart,
   }
 
   return render(request, 'sales/records.html', context)
