@@ -19,6 +19,7 @@
 17. [Exercise 7 Part 3](#exercise-7-part-3)
 18. [Exercise 7 Part 4](#exercise-7-part-4)
 19. [Exercise 7 Part 5](#exercise-7-part-5)
+20. [Achievement 2](#achievement-2)
 
 # Exercise 1
 
@@ -858,3 +859,65 @@ Delete a recipe using the app
 Exit the application through the main menu
 
 ![step 6](./Achievement1/exercise1.7/5.6.png)
+
+# Achievement 2
+## Django Tutorial: Building a Recipe Application
+
+### Overview
+
+This tutorial guides you through building a simple recipe application using the Django web framework. You'll learn core Django concepts, from project setup and model creation to view development and deployment.
+
+### Exercises
+
+1. **Django Fundamentals:**
+
+   - **Virtual Environments:** Learn to create and manage isolated Python environments.
+   - **Installation:** Install Django on macOS, Windows, and Linux.
+
+2. **Project Setup:**
+
+   - **Project & App Creation:** Create a Django project and one or more Django apps within it.
+   - **Project Structure:** Understand the components and settings within a Django project.
+   - **Admin Panel:** Create a superuser and explore the Django admin panel.
+
+3. **Data Modeling:**
+
+   - **Model Creation:** Define Django models to represent your data (e.g., recipes, ingredients).
+   - **Database Integration:** Create database tables from your models and register them with the Django project.
+   - **Data Entry:** Add initial data using the Django admin panel.
+   - **Testing:** Write basic automated tests for your models.
+
+4. **Views & Templates:**
+
+   - **View Logic:** Define views to handle user requests and process data.
+   - **Template Creation:** Develop HTML templates to structure and present data to users.
+   - **URL Routing:** Define URLs and routes to map incoming requests to specific views.
+
+5. **MVT in Action:**
+
+   - **Data Refinement:** Update database tables to include recipe and ingredient details.
+   - **Data Population:** Add recipe data using the Django admin panel.
+   - **User Interface:** Create a welcome page and subpages to display recipe information.
+
+6. **User Authentication:**
+
+   - **User Management:** Implement user authentication features (login, logout).
+   - **View Protection:** Protect specific views from unauthenticated access.
+
+7. **Data Analysis & Features:**
+
+   - **Search Functionality:** Add search capabilities to find recipes by keywords.
+   - **Data Analytics:** Create a basic dashboard to visualize recipe data (optional).
+
+8. **Deployment:**
+   - **Version Control:** Prepare your application code for upload to GitHub.
+   - **Deployment:** Package your Django application and deploy it to a web server (optional).
+
+### Requirements
+
+- **Compatibility:** Works with Python 3.6+ and Django 3.x.
+- **Error Handling:** Implement proper error handling and display user-friendly error messages.
+- **Database:** Use SQLite for development and PostgreSQL for production.
+- **User Interface:** Provide a clean and intuitive user interface with clear instructions and menus.
+- **Code Quality:** Write well-documented and well-tested code.
+- **Project Structure:** Maintain a well-organized project structure with a requirements.txt file and a README.md file.
