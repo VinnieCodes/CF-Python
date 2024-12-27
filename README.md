@@ -862,6 +862,7 @@ Exit the application through the main menu
 
 # Achievement 2
 ## Django Tutorial: Building a Recipe Application
+![Recipe-App-Final](./Achievement2/exercise2.8/recipeApp.png)
 
 ### Overview
 
